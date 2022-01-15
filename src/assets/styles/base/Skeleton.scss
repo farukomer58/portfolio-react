@@ -1,0 +1,21 @@
+@keyframes skeleton {
+  0% {
+    background-color: #fafafa;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(90deg, hsla(0, 0%, 100%, 0), hsla(0, 0, 0, .025) 50%, hsla(0, 0%, 100%, 0)), linear-gradient(#fafafa 100%, transparent 0);
+    background-size: 99% 100%, cover;
+    background-position: -10000% 0, 0 0
+  }
+  100% {
+    background-color: #fafafa;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(90deg, hsla(0, 0%, 100%, 0), hsla(0, 0, 0, .025) 50%, hsla(0, 0%, 100%, 0)), linear-gradient(#fafafa 100%, transparent 0);
+    background-size: 99% 100%, cover;
+    background-position: 10000% 0, 0 0
+  }
+}
+
+div.skeleton {
+  color: transparent;
+  animation: 1.250s infinite skeleton;
+}

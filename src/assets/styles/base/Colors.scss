@@ -1,0 +1,287 @@
+$black: #000;
+$dark-primary: #282833;
+$brown: #452718;
+$white: #fff;
+$light: #f5f5f5;
+$grey: #909090;
+$dark-grey: #616161;
+$purple: #8c0fb4;
+$violet: #470d6c;
+$red: #ff006a;
+$pink: #bb5b97;
+$orange: #ff9016;
+$warning: #df9400;
+$yellow: #ffc927;
+$green: #1d8b3e;
+$olive: #73916c;
+$teal: #008080;
+$blue: #3189ec;
+$contrast-blue: #3f70ee;
+$dark-blue: #083e5d;
+$gold: #ffbf00;
+$platinium: #cecece;
+$primary: #3189ec; //color.primary
+$primary-transparent: rgba(13, 78, 108, 0.04);
+$secondary: rgb(71, 13, 108); //color.secondary
+
+:root {
+  --dark-primary: #282833;
+
+  --purple: #8c0fb4;
+  --violet: rgb(71, 13, 108);
+  --red: #ff006a;
+  --pink: #bb5b97;
+  --orange: #ff9016;
+  --yellow: #ffc927;
+  --green: #1d8b3e;
+  --olive: #696e5f;
+  --teal: #008080;
+  --blue: #3189ec;
+  --contrast-blue: #3f70ee;
+  --dark-blue: #083e5d;
+  --black: #000;
+  --brown: #452718;
+  --white: #fff;
+  --light: #f5f5f5;
+  --grey: #909090;
+  --primary-transparent: rgba(13, 78, 108, 0.04);
+  --primary: #3189ec; //color.primary
+  --secondary: rgb(71, 13, 108); //color.secondary
+}
+
+// Background Colors
+.bg-transparent {
+  background: transparent !important;
+}
+
+.bg-primary {
+  background: $primary !important;
+
+  &-opacity {
+    background: rgba($primary, 0.08) !important;
+  }
+}
+
+.bg-dark-primary {
+  background: $dark-primary !important;
+
+  &-opacity {
+    background: rgba($dark-primary, 0.08) !important;
+  }
+}
+
+.bg-secondary {
+  background: $secondary !important;
+
+  &-opacity {
+    background: rgba($secondary, 0.08) !important;
+  }
+}
+
+.bg-red {
+  background: $red !important;
+
+  &-opacity {
+    background: rgba($red, 0.08) !important;
+  }
+}
+
+.bg-orange {
+  background: $orange !important;
+
+  &-opacity {
+    background: rgba($orange, 0.08) !important;
+  }
+}
+
+.bg-yellow {
+  background: $yellow !important;
+
+  &-opacity {
+    background: rgba($yellow, 0.08) !important;
+  }
+}
+
+.bg-green {
+  background: $green !important;
+
+  &-opacity {
+    background: rgba($green, 0.08) !important;
+  }
+}
+
+.bg-teal {
+  background: $teal !important;
+
+  &-opacity {
+    background: rgba($teal, 0.08) !important;
+  }
+}
+
+.bg-blue {
+  background: $blue !important;
+
+  &-opacity {
+    background: rgba($blue, 0.08) !important;
+  }
+}
+
+.bg-contrast-blue {
+  background: $contrast-blue !important;
+
+  &-opacity {
+    background: rgba($contrast-blue, 0.08) !important;
+  }
+}
+
+.bg-dark-blue {
+  background: $dark-blue !important;
+
+  &-opacity {
+    background: rgba($dark-blue, 0.08) !important;
+  }
+}
+
+.bg-violet {
+  background: $violet !important;
+
+  &-opacity {
+    background: rgba($violet, 0.08) !important;
+  }
+}
+
+.bg-purple {
+  background: $purple !important;
+
+  &-opacity {
+    background: rgba($purple, 0.08) !important;
+  }
+}
+
+.bg-pink {
+  background: $pink !important;
+
+  &-opacity {
+    background: rgba($pink, 0.08) !important;
+  }
+}
+
+.bg-brown {
+  background: $brown !important;
+
+  &-opacity {
+    background: rgba($brown, 0.08) !important;
+  }
+}
+
+.bg-grey {
+  background: $grey !important;
+
+  &-opacity {
+    background: rgba($grey, 0.08) !important;
+  }
+  &-btn {
+    background: rgba($grey, 0.18) !important;
+  }
+}
+
+.bg-light {
+  background: $light !important;
+}
+
+.bg-black {
+  background: $black !important;
+
+  &-opacity {
+    background: rgba($black, 0.08) !important;
+  }
+}
+
+.bg-gold {
+  background: $gold;
+}
+
+.bg-platinium {
+  background: $platinium;
+}
+
+.bg-white {
+  background: $white !important;
+}
+
+// Fore Colors
+.fc-primary {
+  color: $primary !important;
+}
+
+.fc-dark-primary {
+  color: $dark-primary !important;
+}
+
+.fc-secondary {
+  color: $secondary !important;
+}
+
+.fc-red {
+  color: $red !important;
+}
+
+.fc-orange {
+  color: $orange !important;
+}
+
+.fc-yellow {
+  color: $yellow !important;
+}
+
+.fc-olive {
+  color: $olive !important;
+}
+
+.fc-green {
+  color: $green !important;
+}
+
+.fc-teal {
+  color: $teal !important;
+}
+
+.fc-blue {
+  color: $blue !important;
+
+  &-contrast {
+    color: $contrast-blue;
+  }
+}
+
+.fc-violet {
+  color: $violet !important;
+}
+
+.fc-purple {
+  color: $purple !important;
+}
+
+.fc-pink {
+  color: $pink !important;
+}
+
+.fc-brown {
+  color: $brown !important;
+}
+
+.fc-grey {
+  color: $grey !important;
+}
+
+.fc-black {
+  color: $black !important;
+}
+
+.fc-light {
+  color: $light !important;
+}
+
+.fc-white {
+  color: $white !important;
+}

@@ -1,0 +1,57 @@
+// Custom Classes for Text Align
+.align {
+    &-text {
+        &-left {
+            text-align: left !important;
+        }
+        &-right {
+            text-align: right !important;
+        }
+        &-center {
+            text-align: center !important;
+        }
+    }
+
+    &-vertical {
+        &-top {
+            align-items: flex-start !important;
+        }
+        &-center {
+            align-items: center !important;
+        }
+        &-bottom {
+            align-items: flex-end !important;
+        }
+    }
+
+    &-justify {
+        &-left {
+            justify-content: flex-start !important;
+        }
+        &-center {
+            justify-content: center !important;
+        }
+        &-right {
+            justify-content: flex-end !important;
+        }
+    }
+}
+
+// Custom Classes for Shadows
+.elevation {
+    &-1 {
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    &-2 {
+        box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    &-3 {
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    &-4 {
+        box-shadow: 0 2px 24px rgba(0, 0, 0, 0.08);
+    }
+}

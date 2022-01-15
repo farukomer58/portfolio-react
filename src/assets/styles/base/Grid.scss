@@ -1,0 +1,163 @@
+$sm-breakpoint: 576px;
+$md-breakpoint: 768px;
+$lg-breakpoint: 992px;
+$xl-breakpoint: 1200px;
+
+@mixin col-width() {
+  $col: 8.333333333333333%;
+
+  &-1 {width: $col * 1 !important}
+  &-2 {width: $col * 2 !important}
+  &-3 {width: $col * 3 !important}
+  &-4 {width: $col * 4 !important}
+  &-5 {width: $col * 5 !important}
+  &-6 {width: $col * 6 !important}
+  &-7 {width: $col * 7 !important}
+  &-8 {width: $col * 8 !important}
+  &-9 {width: $col * 9 !important}
+  &-10 {width: $col * 10 !important}
+  &-11 {width: $col * 11 !important}
+  &-12 {width: $col * 12 !important}
+  &-auto {
+    width: $col * 0;
+    flex: 1;
+  }
+}
+
+@mixin col-no-gutter() {
+  &-1 {padding: 0 !important;}
+  &-2 {padding: 0 !important;}
+  &-3 {padding: 0 !important;}
+  &-4 {padding: 0 !important;}
+  &-5 {padding: 0 !important;}
+  &-6 {padding: 0 !important;}
+  &-7 {padding: 0 !important;}
+  &-8 {padding: 0 !important;}
+  &-9 {padding: 0 !important;}
+  &-10 {padding: 0 !important;}
+  &-11 {padding: 0 !important;}
+  &-12 {padding: 0 !important;}
+}
+
+
+.row {
+  width: 100%;
+  display: inline-flex;
+  flex-wrap: wrap;
+
+  .col {
+    width: auto;
+
+    &-auto {
+      flex: 1;
+    }
+  }
+
+
+  &.no-gutters-all > .col {
+    padding: 0 !important;
+
+    &.xs {
+      @media only screen and (max-width: $sm-breakpoint) {
+        @include col-no-gutter
+      }
+    }
+
+    &.sm {
+      @media only screen and (min-width: $sm-breakpoint) {
+        @include col-no-gutter
+      }
+    }
+
+    &.md {
+      @media only screen and (min-width: $md-breakpoint) {
+        @include col-no-gutter
+      }
+    }
+
+    &.lg {
+      @media only screen and (min-width: $lg-breakpoint) {
+        @include col-no-gutter
+      }
+    }
+
+    &.xl {
+      @media only screen and (min-width: $xl-breakpoint) {
+        @include col-no-gutter
+      }
+    }
+  }
+
+  &.no-gutters-row{
+    padding: 0 !important;
+
+    .col{padding: 0 !important;}
+
+    @media only screen and (min-width: 768px) {
+      
+    .col{padding: 0 8px !important;}
+      .col:nth-child(1){
+        padding-left: 0 !important;
+      }
+  
+      .col:nth-last-child(1){
+        padding-right: 0 !important;
+      }
+      }
+  }
+
+  .col {
+    float: left;
+    padding: 0 16px;
+    box-sizing: border-box;
+
+    &.xs {
+      @media only screen and (max-width: $sm-breakpoint) {
+        @include col-width
+      }
+    }
+
+    &.sm {
+      @media only screen and (min-width: $sm-breakpoint) {
+        @include col-width
+      }
+    }
+
+    &.md {
+      @media only screen and (min-width: $md-breakpoint) {
+        @include col-width
+      }
+    }
+
+    &.lg {
+      @media only screen and (min-width: $lg-breakpoint) {
+        @include col-width
+      }
+    }
+
+    &.xl {
+      @media only screen and (min-width: $xl-breakpoint) {
+        @include col-width
+      }
+    }
+  }
+}
+
+div.container {
+  width: 1200px;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  @media only screen and (min-width: $md-breakpoint) {
+    padding: 0 16px;
+  }
+
+  &-fluid {
+    width: 100%;
+  }
+}
+
+
+.no-gutters {
+  padding: 0 !important;
+}
