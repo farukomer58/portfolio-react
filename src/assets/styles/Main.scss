@@ -4,3 +4,11 @@
 @import "base/grid";                // Classes for custom Grids
 @import "base/gutters";             // Classes for margin en paddings
 @import "base/CustomClasses.scss";  // Custom classes
+
+@import "components/Navbar.scss";
+
+body{
+    margin:0;
+    padding: 0;
+}
+
