@@ -1,14 +1,124 @@
-@import "base/colors";              // Colors used in the Application
-@import "base/fonts";               // Font Styling
-@import "base/general";             // General Styles    
-@import "base/grid";                // Classes for custom Grids
-@import "base/gutters";             // Classes for margin en paddings
-@import "base/CustomClasses.scss";  // Custom classes
+@import "base/colors"; // Colors used in the Application
+@import "base/fonts"; // Font Styling
+@import "base/general"; // General Styles
+@import "base/grid"; // Classes for custom Grids
+@import "base/gutters"; // Classes for margin en paddings
+@import "base/CustomClasses.scss"; // Custom classes
 
 @import "components/Navbar.scss";
 
-body{
-    margin:0;
+body {
+    margin: 0;
+    height: 100%;
     padding: 0;
 }
 
+a {
+    text-decoration: none;
+    color: rgb(72, 13, 13);
+    font-weight: bold;
+}
+
+// Hero Section
+.hero-image {
+    // background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    background-image: linear-gradient(rgba(0, 0, 0, 0.231), rgba(0, 0, 0, 0.258)), url("../images/banner2.jfif");
+    // background-color: blue;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .hero-container {
+        display: flex;
+        column-gap: 20px;
+        padding: 75px 100px;
+        width: 1500px;
+        margin: 0 auto;
+    }
+
+    .hero-text {
+        // text-align: center;
+        i {
+            position: relative;
+            top: -18px;
+        }
+        font-weight: 500;
+    }
+
+    // .hero-text button {
+    //     border: none;
+    //     outline: 0;
+    //     display: inline-block;
+    //     padding: 10px 25px;
+    //     color: black;
+    //     background-color: #ddd;
+    //     text-align: center;
+    //     cursor: pointer;
+    // }
+
+    // .hero-text button:hover {
+    //     background-color: #555;
+    //     color: white;
+    // }
+
+    .hero-socials {
+        .hero-profile {
+            background-image: url("../images/profile.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 200px;
+            height: 250px;
+            border-radius: 10px;
+        }
+        .hero-icons {
+            display: flex;
+            gap: 15px;
+
+            a {
+                color: white;
+                font-size: 25px;
+                padding-left: 2px;
+
+                &:hover {
+                    color: rgb(174, 174, 174);
+                }
+            }
+        }
+        button {
+            background: #ff4742;
+            border: 1px solid #ff4742;
+            border-radius: 6px;
+            box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+            box-sizing: border-box;
+            color: #ffffff;
+            cursor: pointer;
+            display: inline-block;
+            font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+            font-size: 16px;
+            font-weight: 800;
+            line-height: 16px;
+            min-height: 40px;
+            outline: 0;
+            padding: 12px 14px;
+            text-align: center;
+            text-rendering: geometricprecision;
+            text-transform: none;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            vertical-align: middle;
+            width: 100%;
+
+            &:hover,
+            &:active {
+                background-color: initial;
+                background-position: 0 0;
+                color: #ff4742;
+            }
+            &:active {
+                opacity: 0.5;
+            }
+        }
+    }
+}
