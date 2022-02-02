@@ -122,3 +122,55 @@ a {
         }
     }
 }
+
+.section-container {
+    // display: flex;
+    // column-gap: 20px;
+    width: 100%;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+        90deg,
+        rgb(122 110 110 / 74%) 0%,
+        rgba(121, 9, 9, 0.7203256303) 37%,
+        rgb(255 0 0 / 68%) 100%
+    );
+}
+
+section {
+    padding: 50px 100px;
+    width: 1500px;
+    margin: 0 auto;
+
+    &.flex {
+        display: flex;
+        column-gap: 20px;
+    }
+
+    h2 {
+        padding-bottom: 10px;
+    }
+
+    .experienceRow {
+        width: 50%;
+
+        .experienceItem{
+            display: flex;
+            column-gap: 10px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.288);
+            margin-bottom: 30px;
+
+            small{
+                font-weight: 200;
+            }
+
+            h4,h5,p{
+                margin-top:-10px;
+            }
+
+            .experienceImg{
+                width: 50px;
+                height: 50px;
+            }
+        }
+    }
+}

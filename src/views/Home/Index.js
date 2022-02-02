@@ -1,5 +1,8 @@
 import React from 'react'
 
+// Project Imports
+import ExperienceItem from '../../components/HomePageComponents/ExperienceItem'
+
 // Icons
 import {
     FaGithub,
@@ -57,9 +60,39 @@ const Index = () => {
 
             {/* // Experience
             // Education */}
-            <section>
+            <div className='section-container'>
+                <section className='flex'>
+                    <div className='experienceRow'>
+                        <h2>Experience</h2>
+                        {/* Title, Company, Type, Period, Location, Description */}
+                        <ExperienceItem
+                            image={"vatansoft.jfif"}
+                            title={"Frontend Web Developer"}
+                            startDate={null} // coming..
+                            endDate={null} // coming..
+                            company={"Vatansoft"}
+                            location={"Istanbul/Turkiye"}
+                            type={"Fulltime"}
+                            desc={"Worked On Webpanels With: HTML/CSS, Javascript, React, React Material UI, Sass"}
+                        />
+                        <ExperienceItem
+                            // image={"vatansoft.jfif"}
+                            title={"Frontend Web Developer"}
+                            startDate={null} // coming..
+                            endDate={null} // coming..
+                            company={"Vatansoft"}
+                            location={"Istanbul/Turkiye"}
+                            type={"Fulltime"}
+                            desc={"Worked On Webpanels With: HTML/CSS, Javascript, React, React Material UI, Sass"}
+                        />
+                    </div>
 
-            </section>
+                    <div className='educationRow'>
+                        <h2>Education</h2>
+                    </div>
+                </section>
+            </div>
+
 
             {/* // Quick View of Portfolio with link to full Portfolio */}
         </>
