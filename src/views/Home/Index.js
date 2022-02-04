@@ -2,6 +2,7 @@ import React from 'react'
 
 // Project Imports
 import ExperienceItem from '../../components/HomePageComponents/ExperienceItem'
+import PortfolioItem from '../../components/HomePageComponents/PortfolioItem'
 
 // Icons
 import {
@@ -12,7 +13,7 @@ import {
     FaTwitter
 } from 'react-icons/fa'
 
-const Index = () => {
+const Index = (props) => {
     return (
         <>
             <div className="hero-image">
@@ -87,14 +88,59 @@ const Index = () => {
                         />
                     </div>
 
-                    <div className='educationRow'>
+                    <div className='experienceRow'>
                         <h2>Education</h2>
+
+                        <ExperienceItem
+                            // image={"vatansoft.jfif"}
+                            title={"Frontend Web Developer"}
+                            startDate={null} // coming..
+                            endDate={null} // coming..
+                            company={"Vatansoft"}
+                            location={"Istanbul/Turkiye"}
+                            type={"Fulltime"}
+                            desc={"Worked On Webpanels With: HTML/CSS, Javascript, React, React Material UI, Sass"}
+                        />
                     </div>
                 </section>
             </div>
 
-
             {/* // Quick View of Portfolio with link to full Portfolio */}
+            <div className='section-container reverse'>
+                <section className='portfolioSection'>
+                    <h2 className='text-center'>Portfolio</h2>
+                    <div className='portfolioFilter'>
+                        {/* Here Categories? Tags? Right aligned sort option */}
+                        <button>
+                            Web Development
+                        </button>
+                        <button>
+                            Game Development
+                        </button>
+                    </div>
+                    <div className='porfolioContainer'>
+                        <PortfolioItem
+                            image={null}
+                            projectTitle={"Vanstreek groente en fruit"}
+                            shortDesc={"This is a system that brings local suppliers together with customer"}
+                            tags={[{ title: "webdev", id: 1 }, { title: "webdev", id: 1 }]}
+                        />
+                        <PortfolioItem
+                            image={null}
+                            projectTitle={"Vanstreek groente en fruit"}
+                            shortDesc={"This is a system that brings local suppliers together with customer"}
+                            tags={[{ title: "webdev", id: 1 }, { title: "webdev", id: 1 }]}
+                        />
+                        <PortfolioItem
+                            image={null}
+                            projectTitle={"Vanstreek groente en fruit"}
+                            shortDesc={"This is a system that brings local suppliers together with customer"}
+                            tags={[{ title: "webdev", id: 1 }, { title: "webdev", id: 1 }]}
+                        />
+
+                    </div>
+                </section>
+            </div>
         </>
     )
 }
