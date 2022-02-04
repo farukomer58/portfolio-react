@@ -13,6 +13,7 @@ import {
     FaTwitter
 } from 'react-icons/fa'
 
+
 const Index = (props) => {
     return (
         <>
@@ -137,8 +138,47 @@ const Index = (props) => {
                             shortDesc={"This is a system that brings local suppliers together with customer"}
                             tags={[{ title: "webdev", id: 1 }, { title: "webdev", id: 1 }]}
                         />
-
                     </div>
+                </section>
+            </div>
+
+            {/* Contact Form */}
+            <div className='section-container'>
+                <section className='contactSection'>
+                    <h2 className='text-center'>Contact</h2>
+                    <form>
+                        <div className="formRow">
+                            <div className="form-group col-md-6">
+                                <label for="nameSurname">Name Surname</label>
+                                <input type="text" className="form-control" id="nameSurname" placeholder="Name Surname" />
+                            </div>
+
+                            <div className="form-group col-md-6">
+                                <label for="email">Email</label>
+                                <input type="email" className="form-control" id="email" placeholder="Email" />
+                            </div>
+
+                            <div className="form-group col-md-2">
+                                <label for="phone">Phone</label>
+                                <input type="text" className="form-control" id="phone" placeholder="Phone"/>
+                            </div>
+
+                        </div>
+                        <div className="form-group">
+                            <label for="message">Message</label>
+                            <textarea class="form-control" id="message" rows="3"></textarea>
+                        </div>
+
+                        <button type="submit" className="btn btn-primary">Send Message</button>
+                    </form>
+                </section>
+            </div>
+
+            {/* Footer */}
+            <div className='section-container footer'>
+                <section className=''>
+                    <h2 className='text-center'>Footer</h2>
+
                 </section>
             </div>
         </>

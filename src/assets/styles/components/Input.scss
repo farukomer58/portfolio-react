@@ -1,0 +1,30 @@
+/*inputs*/
+input,
+textarea {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #2c3e50;
+    font-size: 13px;
+}
+
+/*buttons*/
+button {
+    width: 150px;
+    background: #27ae60;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 1px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+}
+button:hover,
+button:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #27ae60;
+}

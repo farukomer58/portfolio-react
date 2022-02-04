@@ -1,9 +1,10 @@
-@import "base/colors"; // Colors used in the Application
-@import "base/fonts"; // Font Styling
-@import "base/general"; // General Styles
-@import "base/grid"; // Classes for custom Grids
-@import "base/gutters"; // Classes for margin en paddings
-@import "base/CustomClasses.scss"; // Custom classes
+@import "base/colors";              // Colors used in the Application
+@import "base/fonts";               // Font Styling
+@import "base/general";             // General Styles
+@import "base/grid";                // Classes for custom Grids
+@import "base/gutters";             // Classes for margin en paddings
+@import "base/CustomClasses.scss";  // Custom classes
+@import "components/Input.scss";    // Inpuits scss 
 
 @import "components/Navbar.scss";
 
@@ -156,7 +157,7 @@ section {
 
     &.flex {
         display: flex;
-        column-gap: 20px;
+        column-gap: 30px;
 
         @media (max-width: 900px) {
             flex-direction: column;
@@ -233,4 +234,25 @@ section {
             }
         }
     }
+}
+
+.contactSection{
+    form{
+        margin:0 auto;
+        width: 50%;
+    }
+    
+    .formRow{
+        display: flex;
+        gap:10px
+    }
+
+    textarea{
+        width: 100%;
+    }
+}
+
+.footer{
+    background: #000;
+    color:#fff
 }
