@@ -1,10 +1,11 @@
-@import "base/colors";              // Colors used in the Application
-@import "base/fonts";               // Font Styling
-@import "base/general";             // General Styles
-@import "base/grid";                // Classes for custom Grids
-@import "base/gutters";             // Classes for margin en paddings
-@import "base/CustomClasses.scss";  // Custom classes
-@import "components/Input.scss";    // Inpuits scss 
+@import "base/colors"; // Colors used in the Application
+@import "base/fonts"; // Font Styling
+@import "base/general"; // General Styles
+@import "base/grid"; // Classes for custom Grids
+@import "base/gutters"; // Classes for margin en paddings
+@import "base/CustomClasses.scss"; // Custom classes
+@import "components/Input.scss"; // Inpuits scss
+@import "components/Modal.scss"; // Inpuits scss
 
 @import "components/Navbar.scss";
 
@@ -19,8 +20,14 @@ a {
     color: rgb(72, 13, 13);
     font-weight: bold;
 }
+
 .text-center {
     text-align: center;
+}
+
+.centerDiv {
+    margin: 0 auto;
+    width: 50%;
 }
 
 // Hero Section
@@ -64,65 +71,64 @@ a {
     //     background-color: #555;
     //     color: white;
     // }
+}
+.hero-socials {
+    .hero-profile {
+        background-image: url("../images/profile.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 200px;
+        height: 250px;
+        border-radius: 10px;
+    }
+    .hero-icons {
+        display: flex;
+        gap: 15px;
+        margin: 0 auto;
+        a {
+            color: white;
+            font-size: 25px;
+            padding-left: 2px;
 
-    .hero-socials {
-        .hero-profile {
-            background-image: url("../images/profile.png");
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            width: 200px;
-            height: 250px;
-            border-radius: 10px;
-        }
-        .hero-icons {
-            display: flex;
-            gap: 15px;
-
-            a {
-                color: white;
-                font-size: 25px;
-                padding-left: 2px;
-
-                &:hover {
-                    color: rgb(174, 174, 174);
-                }
+            &:hover {
+                color: rgb(174, 174, 174);
             }
         }
-        button {
-            background: #ff4742;
-            border: 1px solid #ff4742;
-            border-radius: 6px;
-            box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
-            box-sizing: border-box;
-            color: #ffffff;
-            cursor: pointer;
-            display: inline-block;
-            font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
-            font-size: 16px;
-            font-weight: 800;
-            line-height: 16px;
-            min-height: 40px;
-            outline: 0;
-            padding: 12px 14px;
-            text-align: center;
-            text-rendering: geometricprecision;
-            text-transform: none;
-            user-select: none;
-            -webkit-user-select: none;
-            touch-action: manipulation;
-            vertical-align: middle;
-            width: 100%;
+    }
+    button {
+        background: #ff4742;
+        border: 1px solid #ff4742;
+        border-radius: 6px;
+        box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+        box-sizing: border-box;
+        color: #ffffff;
+        cursor: pointer;
+        display: inline-block;
+        font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+        font-size: 16px;
+        font-weight: 800;
+        line-height: 16px;
+        min-height: 40px;
+        outline: 0;
+        padding: 12px 14px;
+        text-align: center;
+        text-rendering: geometricprecision;
+        text-transform: none;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        vertical-align: middle;
+        width: 100%;
 
-            &:hover,
-            &:active {
-                background-color: initial;
-                background-position: 0 0;
-                color: #ff4742;
-            }
-            &:active {
-                opacity: 0.5;
-            }
+        &:hover,
+        &:active {
+            background-color: initial;
+            background-position: 0 0;
+            color: #ff4742;
+        }
+        &:active {
+            opacity: 0.5;
         }
     }
 }
@@ -131,22 +137,22 @@ a {
     // display: flex;
     // column-gap: 20px;
     width: 100%;
-    background: rgb(2, 0, 36);
-    background: linear-gradient(
-        90deg,
-        rgb(122 110 110 / 74%) 0%,
-        rgba(121, 9, 9, 0.7203256303) 37%,
-        rgb(255 0 0 / 68%) 100%
-    );
+    // background: rgb(2, 0, 36);
+    // background: linear-gradient(
+    //     90deg,
+    //     rgb(122 110 110 / 74%) 0%,
+    //     rgba(121, 9, 9, 0.7203256303) 37%,
+    //     rgb(255 0 0 / 68%) 100%
+    // );
 
     &.reverse {
-        background: rgb(2, 0, 36);
-        background: linear-gradient(
-            90deg,
-            rgb(255 0 0 / 68%) 0%,
-            rgba(121, 9, 9, 0.7203256303) 37%,
-            rgb(122 110 110 / 74%) 100%
-        );
+        // background: rgb(2, 0, 36);
+        // background: linear-gradient(
+        //     90deg,
+        //     rgb(255 0 0 / 68%) 0%,
+        //     rgba(121, 9, 9, 0.7203256303) 37%,
+        //     rgb(122 110 110 / 74%) 100%
+        // );
     }
 }
 
@@ -200,7 +206,7 @@ section {
 }
 
 .portfolioSection {
-    .portfolioSection{
+    .portfolioSection {
         width: 100%;
     }
     .portfolioFilter {
@@ -236,23 +242,30 @@ section {
     }
 }
 
-.contactSection{
-    form{
-        margin:0 auto;
+.contactSection {
+    form {
+        margin: 0 auto;
         width: 50%;
     }
-    
-    .formRow{
+
+    .formRow {
         display: flex;
-        gap:10px
+        gap: 10px;
     }
 
-    textarea{
+    textarea {
         width: 100%;
     }
 }
 
-.footer{
+.footer {
     background: #000;
-    color:#fff
+    color: #fff;
+}
+
+.horizontal-line{
+    margin:0 auto;
+    width: 90%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.174);
 }

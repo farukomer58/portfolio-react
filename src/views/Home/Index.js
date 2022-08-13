@@ -1,8 +1,10 @@
-import React from 'react'
+import React,{useEffect, useState} from 'react'
 
 // Project Imports
 import ExperienceItem from '../../components/HomePageComponents/ExperienceItem'
 import PortfolioItem from '../../components/HomePageComponents/PortfolioItem'
+
+// import { PORTFOLIO_ITEMS } from '../../data/portfolioItems'
 
 // Icons
 import {
@@ -13,10 +15,18 @@ import {
     FaTwitter
 } from 'react-icons/fa'
 
-
 const Index = (props) => {
+
+    const [categories, setCategories] = useState(["All","Web Development", "Game Development"])
+
+useEffect(()=>{
+    // console.log(PORTFOLIO_ITEMS)
+},[])
+
     return (
         <>
+            {/* // Head section: ProfilePicture, QuickInfo
+            // Summary */}
             <div className="hero-image">
                 <div className='hero-container'>
                     <div className='hero-socials'>
@@ -57,11 +67,7 @@ const Index = (props) => {
                 </div>
             </div>
 
-            {/* // Head section: ProfilePicture, QuickInfo
-            // Summary */}
-
-            {/* // Experience
-            // Education */}
+            {/* Experience / Education */}
             <div className='section-container'>
                 <section className='flex'>
                     <div className='experienceRow'>
@@ -105,6 +111,7 @@ const Index = (props) => {
                     </div>
                 </section>
             </div>
+            <div className='horizontal-line'></div>
 
             {/* // Quick View of Portfolio with link to full Portfolio */}
             <div className='section-container reverse'>
@@ -112,12 +119,9 @@ const Index = (props) => {
                     <h2 className='text-center'>Portfolio</h2>
                     <div className='portfolioFilter'>
                         {/* Here Categories? Tags? Right aligned sort option */}
-                        <button>
-                            Web Development
-                        </button>
-                        <button>
-                            Game Development
-                        </button>
+                        {categories.map(category=><button key={category}>
+                            {category}
+                        </button>)}
                     </div>
                     <div className='porfolioContainer'>
                         <PortfolioItem
@@ -141,6 +145,7 @@ const Index = (props) => {
                     </div>
                 </section>
             </div>
+            <div className='horizontal-line'></div>
 
             {/* Contact Form */}
             <div className='section-container'>
@@ -160,7 +165,7 @@ const Index = (props) => {
 
                             <div className="form-group col-md-2">
                                 <label for="phone">Phone</label>
-                                <input type="text" className="form-control" id="phone" placeholder="Phone"/>
+                                <input type="text" className="form-control" id="phone" placeholder="Phone" />
                             </div>
 
                         </div>
@@ -168,17 +173,28 @@ const Index = (props) => {
                             <label for="message">Message</label>
                             <textarea class="form-control" id="message" rows="3"></textarea>
                         </div>
-
                         <button type="submit" className="btn btn-primary">Send Message</button>
                     </form>
                 </section>
             </div>
+            <div className='horizontal-line'></div>
 
             {/* Footer */}
             <div className='section-container footer'>
                 <section className=''>
-                    <h2 className='text-center'>Footer</h2>
-
+                    {/* <h2 className='text-center'>Footer</h2> */}
+                    <div className='centerDiv text-center'>
+                        <p>&copy;Omer Faruk Citik - 2022</p>
+                        <div className='hero-socials'>
+                            <div className='hero-icons' style={{ width: "25%" }}>
+                                <a target={"_blank"} href='https://github.com/farukomer58'><FaGithub /></a>
+                                <a target={"_blank"} href='https://www.linkedin.com/in/omercitik/'><FaLinkedin /></a>
+                                <a target={"_blank"} href='https://github.com/farukomer58'><FaFacebook /></a>
+                                <a target={"_blank"} href='https://github.com/farukomer58'><FaInstagram /></a>
+                                <a target={"_blank"} href='https://github.com/farukomer58'><FaTwitter /></a>
+                            </div>
+                        </div>
+                    </div>
                 </section>
             </div>
         </>
