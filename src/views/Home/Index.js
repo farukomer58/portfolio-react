@@ -1,10 +1,4 @@
-import React,{useEffect, useState} from 'react'
-
-// Project Imports
-import ExperienceItem from '../../components/HomePageComponents/ExperienceItem'
-import PortfolioItem from '../../components/HomePageComponents/PortfolioItem'
-
-// import { PORTFOLIO_ITEMS } from '../../data/portfolioItems'
+import React, { useEffect, useState } from 'react'
 
 // Icons
 import {
@@ -15,18 +9,34 @@ import {
     FaTwitter
 } from 'react-icons/fa'
 
+// Project Imports
+import ExperienceItem from '../../components/HomePageComponents/ExperienceItem'
+import PortfolioItem from '../../components/HomePageComponents/PortfolioItem'
+import { PORTFOLIO_ITEMS } from '../../data/portfolioItems'
+import { CATEGORIES, DEFAULT_CATEGORY } from '../../data/categories'
+
+/** Home Page */
 const Index = (props) => {
 
-    const [categories, setCategories] = useState(["All","Web Development", "Game Development"])
+    const [selectedCategory, setSelectedCategory] = useState(DEFAULT_CATEGORY)
+    const [categories, setCategories] = useState(CATEGORIES)
 
-useEffect(()=>{
-    // console.log(PORTFOLIO_ITEMS)
-},[])
+    const [allPortfolioItems,setAllPortfolioItems] = useState([])
+    const [showedPortfolioItems,setShowedPortfolioItems]=useState([allPortfolioItems])
+
+    /** Function gets called on load of the Home page */
+    useEffect(() => {
+    }, [])
+
+
+    const switchPortfolioCategory = (e, newSelectedCategory) => {
+        e.preventDefault()
+        setSelectedCategory(newSelectedCategory)
+    }
 
     return (
         <>
-            {/* // Head section: ProfilePicture, QuickInfo
-            // Summary */}
+            {/* // Head section: ProfilePicture, QuickInfo Summary */}
             <div className="hero-image">
                 <div className='hero-container'>
                     <div className='hero-socials'>
@@ -51,7 +61,7 @@ useEffect(()=>{
                             Emailadres: omer.citik@hva.nl
                             - Phone: +31 685298846
                             <br />
-                            Linkedin: <a target={"_blank"} href='https://www.linkedin.com/in/omercitik/'>https://www.linkedin.com/in/omercitik/</a>
+                            Linkedin: <a target={"_blank"} href='https://www.linkedin.com/in/omercitik/'>https://www.linkedin.com/in/omercitik/</a><br/>
                             Github: <a target={"_blank"} href='https://github.com/farukomer58'>https://github.com/farukomer58</a>
                         </p>
                         <p>
@@ -119,11 +129,20 @@ useEffect(()=>{
                     <h2 className='text-center'>Portfolio</h2>
                     <div className='portfolioFilter'>
                         {/* Here Categories? Tags? Right aligned sort option */}
-                        {categories.map(category=><button key={category}>
-                            {category}
-                        </button>)}
+                        {categories.map(category => (
+                            <button key={category}
+                                type="button"
+                                className={selectedCategory === category ? "selected" : ""}
+                                onClick={(e) => { switchPortfolioCategory(e, category) }}>
+                                {category}
+                            </button>)
+                        )}
                     </div>
                     <div className='porfolioContainer'>
+
+
+
+
                         <PortfolioItem
                             image={null}
                             projectTitle={"Vanstreek groente en fruit"}

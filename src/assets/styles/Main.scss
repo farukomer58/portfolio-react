@@ -4,8 +4,8 @@
 @import "base/grid"; // Classes for custom Grids
 @import "base/gutters"; // Classes for margin en paddings
 @import "base/CustomClasses.scss"; // Custom classes
-@import "components/Input.scss"; // Inpuits scss
-@import "components/Modal.scss"; // Inpuits scss
+@import "components/Input.scss"; // Inputs scss
+@import "components/Modal.scss"; // Modal scss
 
 @import "components/Navbar.scss";
 
@@ -38,6 +38,8 @@ a {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    color:#000000;
+    font-weight: bold;
 
     .hero-container {
         display: flex;

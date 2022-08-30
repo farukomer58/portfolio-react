@@ -4,6 +4,7 @@ import {Outlet } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
+/** Default/Main layout for all pages on the application */
 const MainLayout = () => {
     return <>
         {/* Navbar */}
@@ -16,7 +17,6 @@ const MainLayout = () => {
             // Education
             // Quick View of Portfolio with link to full Portfolio */}
         <Outlet />
-
 
         {/* // Footer */}
         <Footer />

@@ -6,6 +6,7 @@ import NotFound from '../views/NotFound'
 import MainLayout from '../views/MainLayout'
 import Modal from '../components/Modal'
 
+/** Function with the defined routes in the web app */
 const AppRouter = () => {
     return (
         <Routes>

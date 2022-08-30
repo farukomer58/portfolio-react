@@ -13,7 +13,7 @@ textarea {
 }
 
 /*buttons*/
-button {
+button {  
     width: 150px;
     background: #27ae60;
     font-weight: bold;
@@ -27,4 +27,8 @@ button {
 button:hover,
 button:focus {
     box-shadow: 0 0 0 2px white, 0 0 0 3px #27ae60;
+}
+
+.selected{
+    background-color: red !important;
 }
