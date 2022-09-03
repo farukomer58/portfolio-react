@@ -11,10 +11,8 @@ function useQuery() {
 
 function Modal() {
 
-
-
-    let params = useQuery();
-    console.log(params.get("id"))
+    const queryParams = useQuery();
+    const portfolioItemId = queryParams.get("id")
 
     return <>
         {/* <!-- Modal --> */}

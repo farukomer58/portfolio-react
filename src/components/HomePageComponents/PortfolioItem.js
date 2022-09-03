@@ -2,12 +2,8 @@ import React from 'react';
 
 function PortfolioItem(props) {
 
-    const toggleModal = () => {
-        console.log("I am clicked", props.projectTitle)
-    }
-
     return <>
-        <div className='portfolioItem' onClick={toggleModal}>
+        <div className='portfolioItem' onClick={props.toggleModalPortfolioItem}>
             {/* <img src={require(`../../assets/images/logos/${props.image ? props.image : 'default.jpg'}`)} className='experienceImg' /> */}
             <img src={props.image} className='experienceImg' />
             <h3>{props.projectTitle}</h3>

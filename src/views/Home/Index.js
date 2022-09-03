@@ -1,4 +1,10 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate, useLocation } from "react-router-dom";
+import $ from 'jquery';
+
+// Bootstrap
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
 // Icons
 import {
@@ -15,8 +21,17 @@ import PortfolioItem from '../../components/HomePageComponents/PortfolioItem'
 import { PORTFOLIO_ITEMS } from '../../data/portfolioItems'
 import { CATEGORIES, DEFAULT_CATEGORY } from '../../data/categories'
 
+// A custom hook that builds on useLocation to parse
+// the query string for you.
+function useQuery() {
+    const { search } = useLocation();
+    return React.useMemo(() => new URLSearchParams(search), [search]);
+}
+
 /** Home Page */
 const Index = (props) => {
+
+    let navigate = useNavigate();
 
     const [selectedCategory, setSelectedCategory] = useState(DEFAULT_CATEGORY)
     const [categories, setCategories] = useState(CATEGORIES)
@@ -24,11 +39,56 @@ const Index = (props) => {
     const [allPortfolioItems, setAllPortfolioItems] = useState(PORTFOLIO_ITEMS)
     const [showedPortfolioItems, setShowedPortfolioItems] = useState(allPortfolioItems)
 
+    const [portfolioItemModalOpen, setPortfolioItemModalOpen] = useState(true)
+    let query = useQuery();
+    const [queryParams, setQueryParams] = useState(query.get("portfolioId"))
+
+    const toggleModalPortfolioItem = () => {
+
+        // navigate({
+        //     pathname: '/',
+        //     search: '?sort=date&order=newest',
+        //   });
+
+        // if modal open 
+        // then navigate to '/'
+
+        // else 
+        // navigate to path '/' with the portofolioItem id in the query param
+        // setQueryParams, in the useEffect let the modal open the correct item
+        // 
+    }
+
     /** Function gets called on load of the Home page */
     useEffect(() => {
+        // navigate({
+        //     pathname: '/',
+        //     search: '?sort=date&order=newest',
+        //   });
+
+        document.getElementById("mainBody").addEventListener("click", (event) => {
+            if (!$(event.target).closest('.modalContainer').length && !$(event.target).is('.modalContainer')) {
+                // $(".modalDialog").hide();
+            } else {
+                console.log("I clicked but not modal container shit")
+            }
+        })
+
     }, [])
 
+    /** Function gets when query params changes and react to it */
+    useEffect(() => {
+        if (queryParams === null) { return; }
+        console.log("There is an queryParam, I should load the correct PortfolioItem with the id", queryParams)
+        document.body.classList.add('modalActive');
 
+        // Open Modal, with queryparam id portfolio item
+
+    }, [queryParams])
+
+
+
+    /** Handles Navigation and filtering of portfolio categoeries */
     const switchPortfolioCategory = (e, newSelectedCategory) => {
         e.preventDefault()
         setSelectedCategory(newSelectedCategory)
@@ -152,6 +212,7 @@ const Index = (props) => {
                                     image={portfolioItemToShow.coverImage}
                                     projectTitle={portfolioItemToShow.title}
                                     shortDesc={portfolioItemToShow.shortDescription}
+                                    toggleModalPortfolioItem={toggleModalPortfolioItem}
                                     tags={[{ title: "webdev", id: 1 }, { title: "webdev", id: 1 }]}
                                 />
                             )
@@ -212,6 +273,61 @@ const Index = (props) => {
                     </div>
                 </section>
             </div>
+
+            {/* <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button> */}
+
+            <Button variant="primary" onClick={() => setPortfolioItemModalOpen(true)}>
+                Custom Width Modal
+            </Button>
+
+            <Modal
+                show={portfolioItemModalOpen}
+                onHide={() => setPortfolioItemModalOpen(false)}
+                dialogClassName="modal-90w"
+                aria-labelledby="example-custom-modal-styling-title"
+            >
+                <Modal.Header closeButton>
+                    <Modal.Title id="example-custom-modal-styling-title">
+                        Custom Modal Styling
+                    </Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <p>
+                        Ipsum molestiae natus adipisci modi eligendi? Debitis amet quae unde
+                        commodi aspernatur enim, consectetur. Cumque deleniti temporibus
+                        ipsam atque a dolores quisquam quisquam adipisci possimus
+                        laboriosam. Quibusdam facilis doloribus debitis! Sit quasi quod
+                        accusamus eos quod. Ab quos consequuntur eaque quo rem! Mollitia
+                        reiciendis porro quo magni incidunt dolore amet atque facilis ipsum
+                        deleniti rem!
+                    </p>
+                </Modal.Body>
+            </Modal>
+
+
+
+            {/* Dynamic Portfolio Item Modal */}
+            {/* <div className='modalContainer' onClick={unToggleModal}> */}
+            {/* Modal Content */}
+            {/* <div id="myModal" className="modal hide fade" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div className="modal-header">
+                        <button type="button" className="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h3 id="myModalLabel">Modal header</h3>
+                    </div>
+                    <div className="modal-body">
+                        <div id="datetimepicker1" className="input-append date">
+                            <input data-format="dd/MM/yyyy hh:mm:ss" type="text"></input>
+                            <span className="add-on"><i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
+                        </div>
+                    </div>
+                    <div className="modal-footer">
+                        <button className="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                    </div>
+                </div>
+            </div> */}
+
+
+
         </>
     )
 }
