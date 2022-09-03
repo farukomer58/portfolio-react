@@ -1,22 +1,37 @@
 import React from 'react';
+import { useParams, useLocation } from 'react-router-dom';
+
+// A custom hook that builds on useLocation to parse
+// the query string for you.
+function useQuery() {
+    const { search } = useLocation();
+
+    return React.useMemo(() => new URLSearchParams(search), [search]);
+}
 
 function Modal() {
+
+
+
+    let params = useQuery();
+    console.log(params.get("id"))
+
     return <>
         {/* <!-- Modal --> */}
         <div className='modalContainer'>
-            <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <div id="myModal" className="modal hide fade" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div className="modal-header">
+                    <button type="button" className="close" data-dismiss="modal" aria-hidden="true">×</button>
                     <h3 id="myModalLabel">Modal header</h3>
                 </div>
-                <div class="modal-body">
-                    <div id="datetimepicker1" class="input-append date">
+                <div className="modal-body">
+                    <div id="datetimepicker1" className="input-append date">
                         <input data-format="dd/MM/yyyy hh:mm:ss" type="text"></input>
-                        <span class="add-on"><i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
+                        <span className="add-on"><i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                <div className="modal-footer">
+                    <button className="btn" data-dismiss="modal" aria-hidden="true">Close</button>
                 </div>
             </div>
         </div>

@@ -21,8 +21,8 @@ const Index = (props) => {
     const [selectedCategory, setSelectedCategory] = useState(DEFAULT_CATEGORY)
     const [categories, setCategories] = useState(CATEGORIES)
 
-    const [allPortfolioItems,setAllPortfolioItems] = useState([])
-    const [showedPortfolioItems,setShowedPortfolioItems]=useState([allPortfolioItems])
+    const [allPortfolioItems, setAllPortfolioItems] = useState(PORTFOLIO_ITEMS)
+    const [showedPortfolioItems, setShowedPortfolioItems] = useState(allPortfolioItems)
 
     /** Function gets called on load of the Home page */
     useEffect(() => {
@@ -32,6 +32,12 @@ const Index = (props) => {
     const switchPortfolioCategory = (e, newSelectedCategory) => {
         e.preventDefault()
         setSelectedCategory(newSelectedCategory)
+        console.log(newSelectedCategory)
+        if (newSelectedCategory === CATEGORIES.All) {
+            setShowedPortfolioItems(allPortfolioItems)
+        } else {
+            setShowedPortfolioItems(allPortfolioItems.filter(portfolioItem => portfolioItem.category === newSelectedCategory))
+        }
     }
 
     return (
@@ -61,7 +67,7 @@ const Index = (props) => {
                             Emailadres: omer.citik@hva.nl
                             - Phone: +31 685298846
                             <br />
-                            Linkedin: <a target={"_blank"} href='https://www.linkedin.com/in/omercitik/'>https://www.linkedin.com/in/omercitik/</a><br/>
+                            Linkedin: <a target={"_blank"} href='https://www.linkedin.com/in/omercitik/'>https://www.linkedin.com/in/omercitik/</a><br />
                             Github: <a target={"_blank"} href='https://github.com/farukomer58'>https://github.com/farukomer58</a>
                         </p>
                         <p>
@@ -129,38 +135,28 @@ const Index = (props) => {
                     <h2 className='text-center'>Portfolio</h2>
                     <div className='portfolioFilter'>
                         {/* Here Categories? Tags? Right aligned sort option */}
-                        {categories.map(category => (
+                        {Object.keys(categories).map((category, label) => (
                             <button key={category}
                                 type="button"
-                                className={selectedCategory === category ? "selected" : ""}
-                                onClick={(e) => { switchPortfolioCategory(e, category) }}>
-                                {category}
+                                className={selectedCategory === categories[category] ? "selected" : ""}
+                                onClick={(e) => { switchPortfolioCategory(e, categories[category]) }}>
+                                {categories[category]}
                             </button>)
                         )}
                     </div>
                     <div className='porfolioContainer'>
-
-
-
-
-                        <PortfolioItem
-                            image={null}
-                            projectTitle={"Vanstreek groente en fruit"}
-                            shortDesc={"This is a system that brings local suppliers together with customer"}
-                            tags={[{ title: "webdev", id: 1 }, { title: "webdev", id: 1 }]}
-                        />
-                        <PortfolioItem
-                            image={null}
-                            projectTitle={"Vanstreek groente en fruit"}
-                            shortDesc={"This is a system that brings local suppliers together with customer"}
-                            tags={[{ title: "webdev", id: 1 }, { title: "webdev", id: 1 }]}
-                        />
-                        <PortfolioItem
-                            image={null}
-                            projectTitle={"Vanstreek groente en fruit"}
-                            shortDesc={"This is a system that brings local suppliers together with customer"}
-                            tags={[{ title: "webdev", id: 1 }, { title: "webdev", id: 1 }]}
-                        />
+                        {showedPortfolioItems ? showedPortfolioItems.slice(0, 3).map((portfolioItemToShow, index) => {
+                            return (
+                                <PortfolioItem
+                                    key={index}
+                                    image={portfolioItemToShow.coverImage}
+                                    projectTitle={portfolioItemToShow.title}
+                                    shortDesc={portfolioItemToShow.shortDescription}
+                                    tags={[{ title: "webdev", id: 1 }, { title: "webdev", id: 1 }]}
+                                />
+                            )
+                        }
+                        ) : "Hello"}
                     </div>
                 </section>
             </div>
@@ -173,24 +169,24 @@ const Index = (props) => {
                     <form>
                         <div className="formRow">
                             <div className="form-group col-md-6">
-                                <label for="nameSurname">Name Surname</label>
+                                <label htmlFor="nameSurname">Name Surname</label>
                                 <input type="text" className="form-control" id="nameSurname" placeholder="Name Surname" />
                             </div>
 
                             <div className="form-group col-md-6">
-                                <label for="email">Email</label>
+                                <label htmlFor="email">Email</label>
                                 <input type="email" className="form-control" id="email" placeholder="Email" />
                             </div>
 
                             <div className="form-group col-md-2">
-                                <label for="phone">Phone</label>
+                                <label htmlFor="phone">Phone</label>
                                 <input type="text" className="form-control" id="phone" placeholder="Phone" />
                             </div>
 
                         </div>
                         <div className="form-group">
-                            <label for="message">Message</label>
-                            <textarea class="form-control" id="message" rows="3"></textarea>
+                            <label htmlFor="message">Message</label>
+                            <textarea className="form-control" id="message" rows="3"></textarea>
                         </div>
                         <button type="submit" className="btn btn-primary">Send Message</button>
                     </form>
