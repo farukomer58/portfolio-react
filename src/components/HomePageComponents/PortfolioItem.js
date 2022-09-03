@@ -1,15 +1,15 @@
 import React from 'react';
 
-function PortfolioItem(props) {
+function PortfolioItem({portfolioItemToShow, tags, toggleModalPortfolioItem}) {
 
     return <>
-        <div className='portfolioItem' onClick={props.toggleModalPortfolioItem}>
+        <div className='portfolioItem' onClick={(e)=>toggleModalPortfolioItem(e, portfolioItemToShow)}>
             {/* <img src={require(`../../assets/images/logos/${props.image ? props.image : 'default.jpg'}`)} className='experienceImg' /> */}
-            <img src={props.image} className='experienceImg' />
-            <h3>{props.projectTitle}</h3>
-            <p>{props.shortDesc}</p>
+            <img src={portfolioItemToShow.coverImage} className='experienceImg' />
+            <h3>{portfolioItemToShow.title}</h3>
+            <p>{portfolioItemToShow.shortDescription}</p>
             <div className='portfolioItemTags'>
-                {props.tags?.map((tag, index) => {
+                {tags?.map((tag, index) => {
                     return <button key={tag + index}>
                         {tag.title}
                     </button>

@@ -39,11 +39,18 @@ const Index = (props) => {
     const [allPortfolioItems, setAllPortfolioItems] = useState(PORTFOLIO_ITEMS)
     const [showedPortfolioItems, setShowedPortfolioItems] = useState(allPortfolioItems)
 
-    const [portfolioItemModalOpen, setPortfolioItemModalOpen] = useState(true)
+    const [portfolioItemModalOpen, setPortfolioItemModalOpen] = useState(false)
+    const [selectedPortfolioItemDetails, setSelectedPortfolioItemDetails] = useState({})
     let query = useQuery();
     const [queryParams, setQueryParams] = useState(query.get("portfolioId"))
 
-    const toggleModalPortfolioItem = () => {
+    const toggleModalPortfolioItem = (e, portfolioItemDetails) => {
+        console.log("pressed on itemm....")
+        // load the correct portfolioDetails in state
+        setSelectedPortfolioItemDetails(portfolioItemDetails)
+        // Open the modal
+        setPortfolioItemModalOpen(true)
+
 
         // navigate({
         //     pathname: '/',
@@ -59,23 +66,6 @@ const Index = (props) => {
         // 
     }
 
-    /** Function gets called on load of the Home page */
-    useEffect(() => {
-        // navigate({
-        //     pathname: '/',
-        //     search: '?sort=date&order=newest',
-        //   });
-
-        document.getElementById("mainBody").addEventListener("click", (event) => {
-            if (!$(event.target).closest('.modalContainer').length && !$(event.target).is('.modalContainer')) {
-                // $(".modalDialog").hide();
-            } else {
-                console.log("I clicked but not modal container shit")
-            }
-        })
-
-    }, [])
-
     /** Function gets when query params changes and react to it */
     useEffect(() => {
         if (queryParams === null) { return; }
@@ -85,8 +75,6 @@ const Index = (props) => {
         // Open Modal, with queryparam id portfolio item
 
     }, [queryParams])
-
-
 
     /** Handles Navigation and filtering of portfolio categoeries */
     const switchPortfolioCategory = (e, newSelectedCategory) => {
@@ -209,9 +197,7 @@ const Index = (props) => {
                             return (
                                 <PortfolioItem
                                     key={index}
-                                    image={portfolioItemToShow.coverImage}
-                                    projectTitle={portfolioItemToShow.title}
-                                    shortDesc={portfolioItemToShow.shortDescription}
+                                    portfolioItemToShow={portfolioItemToShow}
                                     toggleModalPortfolioItem={toggleModalPortfolioItem}
                                     tags={[{ title: "webdev", id: 1 }, { title: "webdev", id: 1 }]}
                                 />
@@ -288,7 +274,7 @@ const Index = (props) => {
             >
                 <Modal.Header closeButton>
                     <Modal.Title id="example-custom-modal-styling-title">
-                        Custom Modal Styling
+                        {selectedPortfolioItemDetails.title}
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
