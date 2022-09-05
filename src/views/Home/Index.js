@@ -281,13 +281,11 @@ const Index = (props) => {
                 </Modal.Header>
                 <Modal.Body style={{ height: "85vh" }}>
 
-                    {/* row 1 
-                        image   basic info */}
-                    {/* row 2 
-                        description so */}
+                    {/* row 1 - image   basic info */}
+                    {/* row 2 - description so */}
                     <div className="row">
-                        <div className="col-md-9 ml-auto" style={{ backgroundColor: "blue" }}>
-                            <div className="col-md-12 ml-auto" style={{ backgroundColor: "yellow" }}>
+                        <div className="col-md-9 ml-auto">
+                            <div className="col-md-12 ml-auto">
                                 <Carousel className='customCarousel'>
                                     {console.log(selectedPortfolioItemDetails.image ? selectedPortfolioItemDetails.image : " no imaghess")}
                                     {selectedPortfolioItemDetails.image ? selectedPortfolioItemDetails.image.map((imageItem) => {
@@ -304,132 +302,43 @@ const Index = (props) => {
                                                 </Carousel.Caption> */}
                                             </Carousel.Item>
                                         )
-
                                     }) : null}
-
-
-                                    {/* <Carousel.Item>
-                                        <img
-                                            className="d-block w-100"
-                                            src="https://i.imgur.com/v1HEomk.jpeg"
-                                            alt="Second slide"
-                                        />
-
-                                        <Carousel.Caption>
-                                            <h3>Second slide label</h3>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                        </Carousel.Caption>
-                                    </Carousel.Item>
-                                    <Carousel.Item>
-                                        <img
-                                            className="d-block w-100"
-                                            src="https://i.imgur.com/v1HEomk.jpeg"
-                                            alt="Third slide"
-                                        />
-                                        <Carousel.Caption>
-                                            <h3>Third slide label</h3>
-                                            <p>
-                                                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                                            </p>
-                                        </Carousel.Caption>
-                                    </Carousel.Item> */}
                                 </Carousel>
-
                             </div>
-
-                            <div className="col-md-12 ml-auto" style={{ backgroundColor: "red" }}>
-                                <p>
-                                    {selectedPortfolioItemDetails.description}
-                                </p>
+                            <div className="col-md-12 ml-auto" >
+                                <p>{selectedPortfolioItemDetails.description}</p>
                             </div>
                         </div>
 
                         {/* Right Side */}
-                        <div className="col-md-3 ml-auto" style={{ backgroundColor: "green", height: "" }}>
-                            {selectedPortfolioItemDetails.title}
+                        <div className="col-md-3 ml-auto">
+                            <h3 className='text-center'>{selectedPortfolioItemDetails.title}</h3>
                             {selectedPortfolioItemDetails.shortDescription}
+                            <ul>
+                                <li>Client: {selectedPortfolioItemDetails.client}</li>
+                                <li>Stardate: {selectedPortfolioItemDetails.started}</li>
+                                <li>Status: {selectedPortfolioItemDetails.status}</li>
+                                <li>Ended: {selectedPortfolioItemDetails.ended}</li> {/* TODO: Show only when status is 'finished' */}
+                                <li>Github: {selectedPortfolioItemDetails.github}</li>
 
+                                <a target="_blank" disabled={selectedPortfolioItemDetails.demo} href={selectedPortfolioItemDetails.demo} type="button">Demo</a>
+
+                                <hr />
+
+                                {selectedPortfolioItemDetails.technologies ? selectedPortfolioItemDetails.technologies.map(technology => (
+                                    <li>{technology}</li>
+                                )) : null}
+                                {selectedPortfolioItemDetails.tags ? selectedPortfolioItemDetails.tags.map(tag => (
+                                    <li>{tag}</li>
+                                )) : null}
+
+                                <i>{selectedPortfolioItemDetails.category}</i>
+                            </ul>
                         </div>
                     </div>
 
                 </Modal.Body>
             </Modal>
-
-
-
-            {/* Dynamic Portfolio Item Modal */}
-            {/* <div className='modalContainer' onClick={unToggleModal}> */}
-            {/* Modal Content */}
-            {/* <div id="myModal" className="modal hide fade" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div className="modal-header">
-                        <button type="button" className="close" data-dismiss="modal" aria-hidden="true">×</button>
-                        <h3 id="myModalLabel">Modal header</h3>
-                    </div>
-                    <div className="modal-body">
-                        <div id="datetimepicker1" className="input-append date">
-                            <input data-format="dd/MM/yyyy hh:mm:ss" type="text"></input>
-                            <span className="add-on"><i data-time-icon="icon-time" data-date-icon="icon-calendar"></i></span>
-                        </div>
-                    </div>
-                    <div className="modal-footer">
-                        <button className="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-                    </div>
-                </div>
-            </div> */}
-
-
-
-
-            {/* <div id="carouselExampleIndicators" class="carousel slide"  data-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
-                        <div class="container">
-                            <div class="carousel-caption text-start">
-                                <h1>Example headline 1.</h1>
-                                <p>Some representative placeholder content for the first slide of the carousel.</p>
-                                <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="carousel-item">
-                        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
-                        <div class="container">
-                            <div class="carousel-caption text-start">
-                                <h1>Example headline 2.</h1>
-                                <p>Some representative placeholder content for the first slide of the carousel.</p>
-                                <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
-                        <div class="container">
-                            <div class="carousel-caption text-start">
-                                <h1>Example headline 3.</h1>
-                                <p>Some representative placeholder content for the first slide of the carousel.</p>
-                                <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div> */}
-
-
         </>
     )
 }
