@@ -26,3 +26,30 @@
 }
 
 
+.modal-90w{
+    max-width: 90% !important;
+    width:90%;
+}
+
+.carousel-inner{
+    height: 50vh;
+}
+.carousel-indicators [data-bs-target]{
+    background-color:black !important;
+}
+.carousel-caption{
+    color:black !important;
+}
+.w-100{
+    height: 50vh;
+    margin:0 auto;
+}
+
+.customCarousel{
+    // max-width: 100% !important; 
+    // max-height: 80% !important;
+}
+
+
+
+

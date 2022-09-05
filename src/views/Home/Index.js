@@ -5,6 +5,7 @@ import $ from 'jquery';
 // Bootstrap
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import Carousel from 'react-bootstrap/Carousel';
 
 // Icons
 import {
@@ -46,6 +47,7 @@ const Index = (props) => {
 
     const toggleModalPortfolioItem = (e, portfolioItemDetails) => {
         console.log("pressed on itemm....")
+        console.log(portfolioItemDetails)
         // load the correct portfolioDetails in state
         setSelectedPortfolioItemDetails(portfolioItemDetails)
         // Open the modal
@@ -277,16 +279,79 @@ const Index = (props) => {
                         {selectedPortfolioItemDetails.title}
                     </Modal.Title>
                 </Modal.Header>
-                <Modal.Body>
-                    <p>
-                        Ipsum molestiae natus adipisci modi eligendi? Debitis amet quae unde
-                        commodi aspernatur enim, consectetur. Cumque deleniti temporibus
-                        ipsam atque a dolores quisquam quisquam adipisci possimus
-                        laboriosam. Quibusdam facilis doloribus debitis! Sit quasi quod
-                        accusamus eos quod. Ab quos consequuntur eaque quo rem! Mollitia
-                        reiciendis porro quo magni incidunt dolore amet atque facilis ipsum
-                        deleniti rem!
-                    </p>
+                <Modal.Body style={{ height: "85vh" }}>
+
+                    {/* row 1 
+                        image   basic info */}
+                    {/* row 2 
+                        description so */}
+                    <div className="row">
+                        <div className="col-md-9 ml-auto" style={{ backgroundColor: "blue" }}>
+                            <div className="col-md-12 ml-auto" style={{ backgroundColor: "yellow" }}>
+                                <Carousel className='customCarousel'>
+                                    {console.log(selectedPortfolioItemDetails.image ? selectedPortfolioItemDetails.image : " no imaghess")}
+                                    {selectedPortfolioItemDetails.image ? selectedPortfolioItemDetails.image.map((imageItem) => {
+                                        return (
+                                            <Carousel.Item key={imageItem}>
+                                                <img
+                                                    className="d-block w-100"
+                                                    src={imageItem}
+                                                    alt="First slide"
+                                                />
+                                                {/* <Carousel.Caption>
+                                                    <h3>First slide label</h3>
+                                                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                                </Carousel.Caption> */}
+                                            </Carousel.Item>
+                                        )
+
+                                    }) : null}
+
+
+                                    {/* <Carousel.Item>
+                                        <img
+                                            className="d-block w-100"
+                                            src="https://i.imgur.com/v1HEomk.jpeg"
+                                            alt="Second slide"
+                                        />
+
+                                        <Carousel.Caption>
+                                            <h3>Second slide label</h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                        </Carousel.Caption>
+                                    </Carousel.Item>
+                                    <Carousel.Item>
+                                        <img
+                                            className="d-block w-100"
+                                            src="https://i.imgur.com/v1HEomk.jpeg"
+                                            alt="Third slide"
+                                        />
+                                        <Carousel.Caption>
+                                            <h3>Third slide label</h3>
+                                            <p>
+                                                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                                            </p>
+                                        </Carousel.Caption>
+                                    </Carousel.Item> */}
+                                </Carousel>
+
+                            </div>
+
+                            <div className="col-md-12 ml-auto" style={{ backgroundColor: "red" }}>
+                                <p>
+                                    {selectedPortfolioItemDetails.description}
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Right Side */}
+                        <div className="col-md-3 ml-auto" style={{ backgroundColor: "green", height: "" }}>
+                            {selectedPortfolioItemDetails.title}
+                            {selectedPortfolioItemDetails.shortDescription}
+
+                        </div>
+                    </div>
+
                 </Modal.Body>
             </Modal>
 
@@ -312,6 +377,57 @@ const Index = (props) => {
                 </div>
             </div> */}
 
+
+
+
+            {/* <div id="carouselExampleIndicators" class="carousel slide"  data-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
+                        <div class="container">
+                            <div class="carousel-caption text-start">
+                                <h1>Example headline 1.</h1>
+                                <p>Some representative placeholder content for the first slide of the carousel.</p>
+                                <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="carousel-item">
+                        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
+                        <div class="container">
+                            <div class="carousel-caption text-start">
+                                <h1>Example headline 2.</h1>
+                                <p>Some representative placeholder content for the first slide of the carousel.</p>
+                                <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
+                        <div class="container">
+                            <div class="carousel-caption text-start">
+                                <h1>Example headline 3.</h1>
+                                <p>Some representative placeholder content for the first slide of the carousel.</p>
+                                <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div> */}
 
 
         </>
