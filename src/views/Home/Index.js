@@ -53,19 +53,6 @@ const Index = (props) => {
         // Open the modal
         setPortfolioItemModalOpen(true)
 
-
-        // navigate({
-        //     pathname: '/',
-        //     search: '?sort=date&order=newest',
-        //   });
-
-        // if modal open 
-        // then navigate to '/'
-
-        // else 
-        // navigate to path '/' with the portofolioItem id in the query param
-        // setQueryParams, in the useEffect let the modal open the correct item
-        // 
     }
 
     /** Function gets when query params changes and react to it */
