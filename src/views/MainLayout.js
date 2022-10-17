@@ -4,6 +4,8 @@ import {Outlet } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
+
+
 /** Default/Main layout for all pages on the application */
 const MainLayout = () => {
     return <>
