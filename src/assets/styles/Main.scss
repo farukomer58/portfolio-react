@@ -1,17 +1,17 @@
 // Base Styling
 @import "base/colors";              // Colors used in the Application
 @import "base/general";             // General Styles
-@import "base/CustomClasses.scss";  // Custom classes
+@import "base/customclasses.scss";  // Custom classes
 
 // Pages styling (one page webapp, so one file)
-@import "pages/HomePage.scss";      // General Styles
-@import "pages/NotFound.scss";      // 404 / NotFound page styles
+@import "pages/homepage.scss";      // General Styles
+@import "pages/notfound.scss";      // 404 / NotFound page styles
 
 // Component Styling
-@import "components/Navbar.scss";   // Navbar styling
-@import "components/Input.scss";    // Inputs scss
-@import "components/Footer.scss";   // Navbar styling
-@import "components/Modal.scss";    // Modal scss
+@import "components/navbar.scss";   // Navbar styling
+@import "components/input.scss";    // Inputs scss
+@import "components/footer.scss";   // Navbar styling
+@import "components/modal.scss";    // Modal scss
 
 // @import "base/grid"; // Classes for custom Grids
 // @import "base/gutters"; // Classes for margin en paddings(not used because bootstrap)

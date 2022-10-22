@@ -1,6 +1,6 @@
 import AppRouter from './routes/AppRouter';
 
-import "./assets/styles/Main.scss"
+import "./assets/styles/main.scss"
 
 /** Main Function */
 function App() {
