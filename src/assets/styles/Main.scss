@@ -5,10 +5,12 @@
 
 // Pages styling (one page webapp, so one file)
 @import "pages/HomePage.scss";      // General Styles
+@import "pages/NotFound.scss";      // 404 / NotFound page styles
 
 // Component Styling
 @import "components/Navbar.scss";   // Navbar styling
 @import "components/Input.scss";    // Inputs scss
+@import "components/Footer.scss";   // Navbar styling
 @import "components/Modal.scss";    // Modal scss
 
 // @import "base/grid"; // Classes for custom Grids

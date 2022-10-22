@@ -50,6 +50,75 @@
     // max-height: 80% !important;
 }
 
+.carousel .carousel-indicators button {
+    background-color: #3c9feb31 !important;
+    border: none;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+  }
 
 
+//   #works {
+
+//     .carousel  {
+//      //max-width: 980px; /* ширина всего блока */
+//      margin: 50px auto;
+//      width:100%;
+//    }
+//    .carousel-wrapper {
+//      margin: 10px 30px; /* отступы для стрелок */
+//      overflow: hidden; /* скрываем содержимое, выходящее за рамки основной области */
+//      position:relative;
+//    }
+//    .carousel-items {
+//      //width: 10000px; /* устанавливаем большую ширину для набора элементов */
+//      position: relative; /* позиционируем блок относительно основной области карусели */
+
+//    }
+//    .carousel-block {
+//      float: left; /* выстраиваем все элементы карусели в ряд */
+//      width: 320px; /* задаём ширину каждого элемента */
+//      height: 100%;
+//      overflow: hidden;
+//      padding: 10px; /* делаем оступы, чтобы элементы не сливались */
+
+//         .work {
+//           display: block;
+//           img { height: 200px;}
+//           p {font-size: 1em;}
+//         }
+
+//    }
+   
+
+//   /*********** BUTTONS ***********/
+//   .carousel-button-left, .carousel-button-right{
+//     a {
+//      width: 50px; 
+//      height: 50px; 
+//      position: relative;
+//      top: 150px; 
+//      cursor: pointer; 
+//      text-decoration:none;
+//    }
+//   }
+//   .carousel-button-left {
+//      a {
+//      float: left; 
+//      background: url("https://cdn3.iconfinder.com/data/icons/faticons/32/arrow-left-01-128.png");
+//      background-size: cover;
+     
+//    }
+//   }
+//   .carousel-button-right {
+//      a {
+//      float: right; 
+//      background: url("https://cdn3.iconfinder.com/data/icons/faticons/32/arrow-left-01-128.png") ;
+//      background-size: cover;
+//      transform: rotate(180deg) ;
+//    }
+//   }
+
+// }
 

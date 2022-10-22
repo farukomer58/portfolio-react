@@ -12,7 +12,6 @@ const AppRouter = () => {
         <Routes>
             <Route element={<MainLayout />}>
                 <Route path="/" element={<Index />} />
-                <Route path="/modal" element={<Modal />} />
                 <Route path='*' element={<NotFound />} />
             </Route>
         </Routes>

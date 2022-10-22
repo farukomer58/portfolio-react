@@ -8,13 +8,7 @@ function PortfolioItem({portfolioItemToShow, tags, toggleModalPortfolioItem}) {
             <img src={portfolioItemToShow.coverImage} className='experienceImg' />
             <h3>{portfolioItemToShow.title}</h3>
             <p>{portfolioItemToShow.shortDescription}</p>
-            <div className='portfolioItemTags'>
-                {tags?.map((tag, index) => {
-                    return <button key={tag + index}>
-                        {tag.title}
-                    </button>
-                })}
-            </div>
+
         </div>
     </>;
 }

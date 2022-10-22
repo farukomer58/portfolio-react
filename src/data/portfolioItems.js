@@ -1,9 +1,10 @@
 import PortfolioDetail from "../models/PortfolioDetail";
 import { CATEGORIES } from "./categories";
 // 
-const createPortfolioItem = (imageUrls, coverImage, title, shortDesc, desc, client, started, ended, status, github, technologies, demo, category,tags) => {
+const createPortfolioItem = (id, imageUrls, coverImage, title, shortDesc, desc, client, started, ended, status, github, technologies, demo, category,tags) => {
   const item = new PortfolioDetail();
   // item.id = this.initialId++;
+  item.id = id;
   item.coverImage = coverImage
   item.image = imageUrls; // Initialize Image Array
   item.title = title;
@@ -24,6 +25,7 @@ const createPortfolioItem = (imageUrls, coverImage, title, shortDesc, desc, clie
 
 export const PORTFOLIO_ITEMS = [
   createPortfolioItem(
+    1,
     ['https://i.imgur.com/U3OgFnt.png', 'https://i.imgur.com/0x9A6n0.png', 'https://i.imgur.com/Ka2plSH.png', 'https://i.imgur.com/0x9A6n0.png'],
     'https://i.imgur.com/U3OgFnt.png',
     'Vanstreek groente en fruit',
@@ -42,6 +44,7 @@ export const PORTFOLIO_ITEMS = [
     // [{ title: "webdev", id: 1 }, { title: "webdev", id: 1 }]
   ),
   createPortfolioItem(
+    2,
     ['https://i.imgur.com/GWkIR6X.png', 'https://i.imgur.com/LNjB4r4.png', 'https://i.imgur.com/GWkIR6X.png', 'https://i.imgur.com/LNjB4r4.png'],
     'https://i.imgur.com/GWkIR6X.png',
     'Corendon Project Fasten Your Seatbelt',
@@ -62,6 +65,7 @@ export const PORTFOLIO_ITEMS = [
 
   // CREATE PAD PORTFOLIO ITEM
   createPortfolioItem(
+    3,
     ['https://i.imgur.com/EfIRPKo.png', 'https://i.imgur.com/V0ze987.png', 'https://i.imgur.com/NnAlx2i.png', 'https://i.imgur.com/V0ze987.png'],
     'https://i.imgur.com/EfIRPKo.png',
     'Ben Sajet Project Agile Development',
@@ -84,6 +88,7 @@ export const PORTFOLIO_ITEMS = [
 
   // CREATE Flask ATOM Forum
   createPortfolioItem(
+    4,
     ['https://i.imgur.com/bLLUfB9.png', 'https://i.imgur.com/bHNKB17.png', 'https://i.imgur.com/BoPmdXZ.png', 'https://i.imgur.com/R6NuhRI.png'],
     'https://i.imgur.com/bLLUfB9.png',
     'Flask Atom Forum',
